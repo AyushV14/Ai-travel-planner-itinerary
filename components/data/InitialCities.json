@@ -1,0 +1,125 @@
+{
+    "destinations": [
+      {
+        "id": 1,
+        "name": "Goa",
+        "types": ["Beach", "Party", "Heritage"],
+        "state": "Goa",
+        "description": "Famous for its beaches, vibrant nightlife, and Portuguese heritage.",
+        "coordinates": { "lat": 15.2993, "lon": 74.1240 },
+        "best_time_to_visit": "November to February",
+        "rating": 4.5,
+        "popular_attractions": ["Baga Beach", "Fort Aguada", "Anjuna Beach"],
+        "activities": ["Water Sports", "Nightlife", "Historical Tours"]
+      },
+      {
+        "id": 2,
+        "name": "Jaipur",
+        "types": ["Heritage", "Cultural", "Urban"],
+        "state": "Rajasthan",
+        "description": "Known as the Pink City, offering a mix of historic palaces and vibrant local culture.",
+        "coordinates": { "lat": 26.9124, "lon": 75.7873 },
+        "best_time_to_visit": "October to March",
+        "rating": 4.6,
+        "popular_attractions": ["Amber Fort", "City Palace", "Hawa Mahal"],
+        "activities": ["Historical Tours", "Shopping", "Cultural Experiences"]
+      },
+      {
+        "id": 3,
+        "name": "Manali",
+        "types": ["Hill Station", "Adventure", "Nature"],
+        "state": "Himachal Pradesh",
+        "description": "A popular hill station known for its scenic landscapes and adventure sports.",
+        "coordinates": { "lat": 32.2432, "lon": 77.1887 },
+        "best_time_to_visit": "March to June and September to December",
+        "rating": 4.3,
+        "popular_attractions": ["Solang Valley", "Hadimba Temple", "Rohtang Pass"],
+        "activities": ["Trekking", "Paragliding", "Skiing"]
+      },
+      {
+        "id": 4,
+        "name": "Shimla",
+        "types": ["Hill Station", "Colonial", "Nature"],
+        "state": "Himachal Pradesh",
+        "description": "Shimla offers colonial charm and picturesque landscapes, once a summer capital under British rule.",
+        "coordinates": { "lat": 31.1048, "lon": 77.1734 },
+        "best_time_to_visit": "April to June and September to December",
+        "rating": 4.2,
+        "popular_attractions": ["The Ridge", "Mall Road", "Jakhoo Temple"],
+        "activities": ["Sightseeing", "Shopping", "Nature Walks"]
+      },
+      {
+        "id": 5,
+        "name": "Agra",
+        "types": ["Historical", "Heritage"],
+        "state": "Uttar Pradesh",
+        "description": "Home to the iconic Taj Mahal and other Mughal-era monuments.",
+        "coordinates": { "lat": 27.1767, "lon": 78.0081 },
+        "best_time_to_visit": "October to March",
+        "rating": 4.4,
+        "popular_attractions": ["Taj Mahal", "Agra Fort", "Itmad-ud-Daulah"],
+        "activities": ["Historical Tours", "Photography", "Cultural Visits"]
+      },
+      {
+        "id": 6,
+        "name": "Udaipur",
+        "types": ["Heritage", "Romantic", "Lakeside"],
+        "state": "Rajasthan",
+        "description": "Famous for its lakes, palaces, and romantic ambiance.",
+        "coordinates": { "lat": 24.5854, "lon": 73.7125 },
+        "best_time_to_visit": "September to March",
+        "rating": 4.5,
+        "popular_attractions": ["City Palace", "Lake Pichola", "Jag Mandir"],
+        "activities": ["Boating", "Historical Tours", "Cultural Events"]
+      },
+      {
+        "id": 7,
+        "name": "Rishikesh",
+        "types": ["Spiritual", "Adventure", "Nature"],
+        "state": "Uttarakhand",
+        "description": "Known as the yoga capital of the world, offering spiritual retreats and river rafting.",
+        "coordinates": { "lat": 30.0869, "lon": 78.2676 },
+        "best_time_to_visit": "September to November",
+        "rating": 4.4,
+        "popular_attractions": ["Lakshman Jhula", "Triveni Ghat", "Neer Garh Waterfall"],
+        "activities": ["Yoga", "Rafting", "Meditation"]
+      },
+      {
+        "id": 8,
+        "name": "Mysore",
+        "types": ["Historical", "Cultural"],
+        "state": "Karnataka",
+        "description": "Renowned for its royal heritage, magnificent palaces, and rich cultural legacy.",
+        "coordinates": { "lat": 12.2958, "lon": 76.6394 },
+        "best_time_to_visit": "October to March",
+        "rating": 4.3,
+        "popular_attractions": ["Mysore Palace", "Chamundi Hills", "St. Philomena's Cathedral"],
+        "activities": ["Historical Tours", "Cultural Experiences", "Shopping"]
+      },
+      {
+        "id": 9,
+        "name": "Darjeeling",
+        "types": ["Hill Station", "Tea Garden", "Nature"],
+        "state": "West Bengal",
+        "description": "Offers breathtaking views of the Himalayas and is famous for its tea gardens.",
+        "coordinates": { "lat": 27.0410, "lon": 88.2663 },
+        "best_time_to_visit": "March to May and September to November",
+        "rating": 4.3,
+        "popular_attractions": ["Tiger Hill", "Batasia Loop", "Padmaja Naidu Himalayan Zoological Park"],
+        "activities": ["Trekking", "Sightseeing", "Tea Plantation Tours"]
+      },
+      {
+        "id": 10,
+        "name": "Varanasi",
+        "types": ["Spiritual", "Historical", "Cultural"],
+        "state": "Uttar Pradesh",
+        "description": "One of the oldest continuously inhabited cities in the world, rich in spiritual heritage.",
+        "coordinates": { "lat": 25.3176, "lon": 82.9739 },
+        "best_time_to_visit": "November to February",
+        "rating": 4.4,
+        "popular_attractions": ["Dashashwamedh Ghat", "Kashi Vishwanath Temple", "Assi Ghat"],
+        "activities": ["Spiritual Tours", "Cultural Experiences", "River Cruises"]
+      }
+    ]
+  }
+  
