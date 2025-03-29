@@ -1,7 +1,8 @@
-// C:\Users\Ayush\Desktop\next.js\travel-itinerary-generator\components\data\scripts\generateCentralizedData.js
 const axios = require('axios');
 const citiesData = require('../InitialCities.json'); // Fixed the path
 const fs = require('fs');
+
+const BASE_TRAIN_API = 'http://localhost:3000/trains';
 
 // Function to fetch locationId for a city
 async function getLocationId(cityName) {
@@ -17,8 +18,7 @@ async function getLocationId(cityName) {
 
   try {
     const response = await axios.request(options);
-    const locationId = response.data.data[0]?.locationId;
-    return locationId || null;
+    return response.data.data[0]?.locationId || null;
   } catch (error) {
     console.error(`Error fetching locationId for ${cityName}:`, error);
     return null;
@@ -46,6 +46,19 @@ async function getRestaurants(locationId) {
   }
 }
 
+// Function to fetch train data between two cities
+async function getTrainsBetweenStations(from, to) {
+  try {
+    const response = await axios.get(`${BASE_TRAIN_API}/betweenStations`, {
+      params: { from, to }
+    });
+    return response.data.data || [];
+  } catch (error) {
+    console.error(`Error fetching trains from ${from} to ${to}:`, error);
+    return [];
+  }
+}
+
 // Main function to generate the centralized dataset
 async function generateCentralizedData() {
   const centralizedData = {
@@ -53,17 +66,28 @@ async function generateCentralizedData() {
   };
 
   for (const city of citiesData.destinations) {
-    const { name } = city;
+    const { name, stationCode } = city;
     const locationId = await getLocationId(name);
     if (!locationId) {
       console.warn(`No locationId found for ${name}, skipping...`);
       continue;
     }
     const restaurants = await getRestaurants(locationId);
+
+    // Get trains from this city to all other cities
+    const trainData = [];
+    for (const destination of citiesData.destinations) {
+      if (destination.name !== name) {
+        const trains = await getTrainsBetweenStations(stationCode, destination.stationCode);
+        trainData.push({ destination: destination.name, trains });
+      }
+    }
+
     centralizedData.destinations.push({
       ...city,
       locationId,
-      restaurants
+      restaurants,
+      trains: trainData
     });
   }
 
