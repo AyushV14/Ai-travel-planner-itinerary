@@ -11,7 +11,7 @@ async function getLocationId(cityName) {
     url: 'https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchLocation',
     params: { query: cityName },
     headers: {
-      'x-rapidapi-key': 'ead5355cbcmsh1cbfe5ce3f211eap11e04fjsne433f9598501',
+      'x-rapidapi-key': 'dd6e2df43cmsh13b7ce2c2169946p1e7d93jsnaccca977b496',
       'x-rapidapi-host': 'tripadvisor16.p.rapidapi.com'
     }
   };
@@ -32,7 +32,7 @@ async function getRestaurants(locationId) {
     url: 'https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants',
     params: { locationId: locationId },
     headers: {
-      'x-rapidapi-key': 'ead5355cbcmsh1cbfe5ce3f211eap11e04fjsne433f9598501',
+      'x-rapidapi-key': 'dd6e2df43cmsh13b7ce2c2169946p1e7d93jsnaccca977b496',
       'x-rapidapi-host': 'tripadvisor16.p.rapidapi.com'
     }
   };
