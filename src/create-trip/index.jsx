@@ -38,7 +38,7 @@ function CreateTrip() {
   }
 
   useEffect(() => {
-    console.log(formData)
+    // console.log(formData)
   }, [formData])
 
   const onGenerateTrip = async () => {
@@ -99,7 +99,7 @@ function CreateTrip() {
         Accept: 'application/json',
       },
     }).then((resp) => {
-      console.log(resp);
+      // console.log(resp);
       localStorage.setItem('user', JSON.stringify(resp.data));
       setOpenDialog(false);
       onGenerateTrip();
