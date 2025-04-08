@@ -46,15 +46,17 @@ function Header() {
 
   return (
     <div className='shadow-sm flex justify-between items-center px-6'>
-      <img src="/logo.svg" alt="Logo" />
+      <a href="/">
+        <img src="/logo.svg" alt="Logo" />
+      </a>
       <div>
         {user ?
           <div className='flex items-center gap-3'>
             <a href="/create-trip">
-            <Button variant="outline" className="rounded-full">+ Create Trip</Button>
+              <Button variant="outline" className="rounded-full">+ Create Trip</Button>
             </a>
             <a href="/my-trips">
-            <Button variant="outline" className="rounded-full">My Trips</Button>
+              <Button variant="outline" className="rounded-full">My Trips</Button>
             </a>
             <Popover>
               <PopoverTrigger>             
@@ -68,8 +70,9 @@ function Header() {
                 }}>Logout</h2>
               </PopoverContent>
             </Popover>
-
-          </div> : <Button onClick={()=>setOpenDialog(true)}>Sign In</Button>}
+          </div> : 
+          <Button onClick={()=>setOpenDialog(true)}>Sign In</Button>
+        }
       </div>
 
       <Dialog open={openDialog}>
@@ -88,7 +91,6 @@ function Header() {
           </DialogHeader>
         </DialogContent>
       </Dialog>
-
     </div>
   )
 }
