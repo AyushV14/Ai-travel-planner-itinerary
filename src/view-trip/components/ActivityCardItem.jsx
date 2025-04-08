@@ -2,34 +2,34 @@ import { GetPlaceDetails, PHOTO_REF_URL } from '@/service/GlobalApi';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function HotelCardItem({ hotel }) {
+function ActivityCardItem({ activity }) {
   const [photoUrl, setPhotoUrl] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  console.log('Hotel card details:', hotel);
+  console.log('Activity card details:', activity);
 
   useEffect(() => {
-    if (hotel?.name) {
+    if (activity?.name) {
       GetPlacePhoto();
     } else {
       setPhotoUrl('/default-travel-placeholder.jpg');
       setIsLoading(false);
     }
-  }, [hotel]);
+  }, [activity]);
 
   const GetPlacePhoto = async () => {
     try {
-      const data = { textQuery: hotel?.name };
+      const data = { textQuery: activity?.name };
       const result = await GetPlaceDetails(data);
       if (result.data.places[0]?.photos?.[3]) {
         const PhotoUrl = PHOTO_REF_URL.replace('{NAME}', result.data.places[0].photos[3].name);
         setPhotoUrl(PhotoUrl);
-      } else if (hotel?.imageUrl) {
-        setPhotoUrl(hotel?.imageUrl);
+      } else if (activity?.imageUrl) {
+        setPhotoUrl(activity?.imageUrl);
       } else {
         setPhotoUrl('/default-travel-placeholder.jpg');
       }
     } catch (error) {
-      console.error('Error fetching hotel photo:', error);
+      console.error('Error fetching activity photo:', error);
       setPhotoUrl('/default-travel-placeholder.jpg');
     } finally {
       setIsLoading(false);
@@ -40,9 +40,9 @@ function HotelCardItem({ hotel }) {
     <Link
       to={
         'https://www.google.com/maps/search/?api=1&query=' +
-        (hotel?.name || '') +
+        (activity?.name || '') +
         ',' +
-        (hotel?.address || '')
+        (activity?.geoCoordinates || '')
       }
       target='_blank'
     >
@@ -53,21 +53,21 @@ function HotelCardItem({ hotel }) {
           <img
             src={photoUrl || '/default-travel-placeholder.jpg'}
             className='rounded-xl h-[180px] w-full object-cover'
-            alt={hotel?.name || 'Hotel Image'}
+            alt={activity?.name || 'Activity Image'}
             onError={(e) => {
               e.target.src = '/default-travel-placeholder.jpg';
             }}
           />
         )}
         <div className='my-2'>
-          <h2 className='font-medium'>{hotel?.name || 'Unnamed Hotel'}</h2>
-          <h2 className='text-xs text-gray-500'>📍{hotel?.address || 'No address available'}</h2>
-          <h2 className='text-sm'>💰{hotel?.price || 'Price not available'}</h2>
-          <h2 className='text-sm'>⭐{hotel?.rating || 'No rating'}</h2>
+          <h2 className='font-medium'>{activity?.name || 'Unnamed Activity'}</h2>
+          <h2 className='text-xs text-gray-500'>📍{activity?.geoCoordinates || 'No coordinates available'}</h2>
+          <h2 className='text-sm'>💰{activity?.ticketPricing || 'Price not available'}</h2>
+          <h2 className='text-sm'>⭐{activity?.rating || 'No rating'}</h2>
         </div>
       </div>
     </Link>
   );
 }
 
-export default HotelCardItem;
+export default ActivityCardItem;
